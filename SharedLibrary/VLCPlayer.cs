@@ -51,8 +51,11 @@ namespace SharedLibrary
 
         public TimeSpan Position
         {
-            get { return TimeSpan.FromMilliseconds(vlcob.Position); }
-            set { vlcob.Position = (float)value.TotalMilliseconds; }
+            get
+            {
+                int time = (int)(vlcob.Position * vlcob.Duration.TotalMilliseconds);
+                return TimeSpan.FromMilliseconds(time);
+            }
         }
 
         public event PositionChangedEventHandler PositionChanged;

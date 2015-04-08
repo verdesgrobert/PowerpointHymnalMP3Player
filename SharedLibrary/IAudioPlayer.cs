@@ -15,7 +15,7 @@ namespace SharedLibrary
         /// <summary>
         /// Player Position
         /// </summary>
-        TimeSpan Position { get; set; }
+        TimeSpan Position { get; }
         event PositionChangedEventHandler PositionChanged;
         void DisposeMediaIfAny();
         bool IsPlaying { get; set; }

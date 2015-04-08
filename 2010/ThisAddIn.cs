@@ -32,12 +32,8 @@ namespace PowerpointHymnalMP3Player
                 Application.SlideShowBegin += Application_SlideShowBegin;
                 this.Application.SlideShowEnd += Application_SlideShowEnd;
                 Application.PresentationOpen += Application_PresentationOpen;
-                if (Properties.Settings.Default.Mode == AudioTypeEnum.VLC)
-                    audioPlayer = new VLCPlayer();
-                else
-                    audioPlayer = new NAudioPlayer();
-                audioPlayer.Init();
-                audioPlayer.PositionChanged += audioPlayer_PositionChanged;
+                Application.PresentationClose += Application_PresentationClose;
+
 
                 CurrentApp = Application;
             }
@@ -46,6 +42,7 @@ namespace PowerpointHymnalMP3Player
                 MessageBox.Show(exception.Message + "\n" + exception.StackTrace);
             }
         }
+
 
         void audioPlayer_PositionChanged(double position, TimeSpan duration)
         {
@@ -81,9 +78,19 @@ namespace PowerpointHymnalMP3Player
         public static PowerPoint.Application CurrentApp;
         void Application_PresentationOpen(PowerPoint.Presentation Pres)
         {
-
+            if (Properties.Settings.Default.Mode == AudioTypeEnum.VLC)
+                audioPlayer = new VLCPlayer();
+            else
+                audioPlayer = new NAudioPlayer();
+            audioPlayer.Init();
+            audioPlayer.PositionChanged += audioPlayer_PositionChanged;
         }
 
+        void Application_PresentationClose(PowerPoint.Presentation Pres)
+        {
+            if (audioPlayer != null)
+                audioPlayer.PositionChanged -= audioPlayer_PositionChanged;
+        }
         void Application_SlideShowBegin(PowerPoint.SlideShowWindow Wn)
         {
             if (Wn.View.CurrentShowPosition == Properties.Settings.Default.SlideNumber)
