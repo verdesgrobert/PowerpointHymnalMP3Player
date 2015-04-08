@@ -6,7 +6,7 @@ using Vlc.DotNet.Core;
 using Vlc.DotNet.Core.Medias;
 using Vlc.DotNet.Wpf;
 
-namespace pptAddIn
+namespace SharedLibrary
 {
     public class VLCPlayer : IAudioPlayer
     {

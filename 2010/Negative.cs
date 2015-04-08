@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Data;
 using Microsoft.Office.Tools.Ribbon;
 
-namespace pptAddIn
+namespace PowerpointHymnalMP3Player
 {
     public partial class Negative
     {

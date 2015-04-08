@@ -1,4 +1,4 @@
-﻿namespace pptAddIn
+﻿namespace PowerpointHymnalMP3Player
 {
     partial class Negative : Microsoft.Office.Tools.Ribbon.RibbonBase
     {

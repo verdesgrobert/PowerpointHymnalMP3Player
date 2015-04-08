@@ -25,7 +25,7 @@
     <ProjectGuid>{2BE4286B-E8D0-4CF0-AE58-4777AB3D0B04}</ProjectGuid>
     <OutputType>Library</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
-    <RootNamespace>pptAddIn</RootNamespace>
+    <RootNamespace>PowerpointHymnalMP3Player</RootNamespace>
     <AssemblyName>PowerpointHymnalMP3Player</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <OfficeApplication>PowerPoint</OfficeApplication>
@@ -41,7 +41,7 @@
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <PublishUrl>D:\Sviluppo\TeamFoundationServerRoot\WindowsForm Projects\pptAddIn\pptAddIn\publish\</PublishUrl>
+    <PublishUrl>D:\Sviluppo\TeamFoundationServerRoot\Github\PowerpointHymnalMP3Player\2010\ClickOnceSetup\</PublishUrl>
     <InstallUrl />
     <TargetCulture>en</TargetCulture>
     <ApplicationVersion>0.0.1.1</ApplicationVersion>
@@ -183,18 +183,6 @@
     <Reference Include="System.Data.DataSetExtensions">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="Vlc.DotNet.Core">
-      <HintPath>.\Vlc.DotNet.Core.dll</HintPath>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="Vlc.DotNet.Core.Interops">
-      <HintPath>.\Vlc.DotNet.Core.Interops.dll</HintPath>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="Vlc.DotNet.Wpf">
-      <HintPath>.\Vlc.DotNet.Wpf.dll</HintPath>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-    </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <!--
@@ -208,8 +196,6 @@
     can be found.
   -->
   <ItemGroup>
-    <Compile Include="IAudioPlayer.cs" />
-    <Compile Include="NAudioPlayer.cs" />
     <Compile Include="Negative.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -219,8 +205,6 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Settings.cs" />
-    <Compile Include="VLCPlayer.cs" />
     <EmbeddedResource Include="Negative.resx">
       <DependentUpon>Negative.cs</DependentUpon>
     </EmbeddedResource>
@@ -301,6 +285,12 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SharedLibrary\SharedLibrary.csproj">
+      <Project>{49b4f464-c0db-4159-bd67-84cc1b621fa7}</Project>
+      <Name>SharedLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <!-- Include the build rules for a C# project. -->
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -323,7 +313,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
         <ProjectProperties HostName="PowerPoint" HostPackage="{20A848B8-E01F-4801-962E-25DB0FF57389}" OfficeVersion="14.0" VstxVersion="4.0" ApplicationType="PowerPoint" Language="cs" TemplatesPath="VSTOTemplates" DebugInfoExeName="#Software\Microsoft\Office\14.0\PowerPoint\InstallRoot\Path#powerpnt.exe" AddItemTemplatesGuid="{51063C3A-E220-4D12-8922-BDA915ACD783}" />
-        <Host Name="PowerPoint" GeneratedCodeNamespace="pptAddIn" PublishedHash="69C324AB27932AA2FBF2B7EA72250886FF164DE6" IconIndex="0">
+        <Host Name="PowerPoint" GeneratedCodeNamespace="PowerpointHymnalMP3Player" PublishedHash="69C324AB27932AA2FBF2B7EA72250886FF164DE6" IconIndex="0">
           <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" PublishedHash="236BC400AC8242C958CA5AC82B5D5EE500B1E500" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" />
         </Host>
       </FlavorProperties>

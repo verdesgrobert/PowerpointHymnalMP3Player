@@ -7,7 +7,7 @@ using NAudio.CoreAudioApi;
 using NAudio.Utils;
 using NAudio.Wave;
 
-namespace pptAddIn
+namespace SharedLibrary
 {
     public class NAudioPlayer : IAudioPlayer
     {

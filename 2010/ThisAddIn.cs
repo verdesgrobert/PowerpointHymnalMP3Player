@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SharedLibrary;
 using Office = Microsoft.Office.Core;
 using PowerPoint = Microsoft.Office.Interop.PowerPoint;
 
-namespace pptAddIn
+namespace PowerpointHymnalMP3Player
 {
-
     [Serializable]
     public enum AudioTypeEnum
     {

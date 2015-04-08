@@ -8,9 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System.Configuration;
-
-namespace pptAddIn.Properties
+namespace PowerpointHymnalMP3Player.Properties
 {
 
 
@@ -62,12 +60,11 @@ namespace pptAddIn.Properties
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("VLC")]
-        [global::System.Configuration.SettingsSerializeAs(SettingsSerializeAs.String)]
-        public global::pptAddIn.AudioTypeEnum Mode
+        public global::PowerpointHymnalMP3Player.AudioTypeEnum Mode
         {
             get
             {
-                return ((global::pptAddIn.AudioTypeEnum)(this["Mode"]));
+                return ((global::PowerpointHymnalMP3Player.AudioTypeEnum)(this["Mode"]));
             }
             set
             {
