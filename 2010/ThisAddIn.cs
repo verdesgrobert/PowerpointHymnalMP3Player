@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using SharedLibrary;
 using Office = Microsoft.Office.Core;
 using PowerPoint = Microsoft.Office.Interop.PowerPoint;
+using System.Diagnostics;
 
 namespace PowerpointHymnalMP3Player
 {
@@ -63,7 +64,6 @@ namespace PowerpointHymnalMP3Player
                 }
                 catch (Exception e)
                 {
-                    txtBox.TextFrame.TextRange.Text = e.Message + ":" + e.StackTrace;
                 }
             });
         }
