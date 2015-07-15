@@ -64,6 +64,8 @@ namespace PowerpointHymnalMP3Player
                 }
                 catch (Exception e)
                 {
+                    Debug.WriteLine(e.Message + ":" + e.StackTrace);
+                    //   txtBox.TextFrame.TextRange.Text = e.Message + ":" + e.StackTrace;
                 }
             });
         }
